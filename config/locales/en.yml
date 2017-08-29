@@ -1,33 +1,112 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  h1:
+    text1: "For people who love the internet"
+  h2:
+    text1: "Your Shortened Web Addresses"
+  h3:
+    text1: "But hate long, lame, and boring web addresses!"
+    text2: "Request Account Confirmation"
+    text3: "Create New Password"
+    text4: "Reset Password"
+    text5: "Edit Account"
+    text6: "Create Account"
+    text7: "Sign In"
+    text8: "Request Account Unlock"
+  div:
+    text1: "Your shortened URL is %{url}"
+    text2: "You have not shortened any urls yet!"
+    text3: "Currently waiting confirmation for: %{email}"
+    text4: "Your shortened url has been deleted successfully"
+    text5: "The url you are looking for has not been shortened"
+  input:
+    placeholder1: "Type url and hit enter"
+    placeholder2: "Email"
+    placeholder3: "Password(minimum 8 characters)"
+    placeholder4: "Confirm Password"
+    placeholder5: "First Name"
+    placeholder6: "Last Name"
+    placeholder7: "Date of Birth"
+    placeholder8: "Current Password"
+    placeholder9: "Password"
+    value1: "RESEND CONFIRMATION"
+    value2: "UPDATE PASSWORD"
+    value3: "RESET PASSWORD"
+    value4: "UPDATE"
+    value5: "SIGN UP"
+    value6: "SIGN IN"
+    value7: "UNLOCK ACCOUNT"
+  p:
+    text1: "%{symbol} Republic of Scotchers %{year}. All rights reserved."
+  a:
+    text1: "MY URAILS"
+    text2: "EDIT ACCOUNT"
+    text3: "LOGOUT"
+    text4: "LOGIN"
+    text5: "SIGN UP"
+    text6: "Delete"
+    text7: "Forgot Password?"
+    text8: "Account Unconfirmed?"
+    text9: "Account Locked?"
+    text10: "Welcome, %{full_name}"
+    data1: "Are you sure you want to delete the url %{url} from your account?"
+  th:
+    text1: "ID"
+    text2: "Full URL"
+    text3: "Short URL"
+    text4: "Action"
+    text5: "Share"
+  label:
+    text1: "Remember Me"
+  mail:
+    confirm_account:
+      p:
+        text1: "Welcome %{email}!"
+        text2: "You can confirm your account email through the link below:"
+      a:
+        text1: "Confirm my account"
+    password_change:
+      p:
+        text1: "Hello %{email}!"
+        text2: "We're contacting you to notify you that your password has been changed."
+    reset_password:
+      p:
+        text1: "Hello %{email}!"
+        text2: "Someone has requested a link to change your password. You can do this through the link below."
+        text3: "If you didn't request this, please ignore this email."
+        text4: "Your password won't change until you access the link above and create a new one."
+      a:
+        text1: "Change my password"
+    unlock_account:
+      p:
+        text1: "Hello %{email}!"
+        text2: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        text3: "Click the link below to unlock your account:"
+      a:
+        text1: "Unlock my account"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "First name cannot be blank"
+              too_long: "First name cannot be longer than %{count} characters"
+            last_name:
+              blank: "Last name cannot be blank"
+              too_long: "Last name cannot be longer than %{count} characters"
+            email:
+              blank: "Email cannot be blank"
+            password:
+              blank: "Password cannot be blank"
+            password_confirmation:
+              confirmation: "Password and confirmed password does not match"
+            current_password:
+              blank: "Current password cannot be blank"
+              invalid: "Current password is invalid"
+            date_of_birth:
+              blank: "Date of birth cannot be blank"
+        url:
+          attributes:
+            path:
+              blank: "Web address cannot be blank"
+              unreachable: "Web address is invalid or host is unreachable"
