@@ -10,6 +10,54 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require adminbsb-materialdesign/plugins/bootstrap/css/bootstrap.min.css
+ *= require adminbsb-materialdesign/plugins/node-waves/waves.min.css
+ *= require adminbsb-materialdesign/plugins/animate-css/animate.min.css
+ *= require adminbsb-materialdesign/plugins/morrisjs/morris.css
+ *= require adminbsb-materialdesign/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css
+ *= require adminbsb-materialdesign/css/style.min.css
+ *= require adminbsb-materialdesign/css/themes/theme-cyan.min.css
  *= require_self
  */
+
+body {
+  padding: 75px 0px 75px 0px;
+}
+
+#cover {
+  background: url('cover.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#cover nav, #cover footer {
+  background-color: transparent;
+}
+
+#cover h1, #cover h3 {
+  color: #ffffff;
+}
+
+#cover input[type="text"] {
+  background-color: transparent;
+  color: #ffffff;
+  margin-top: 75px;
+}
+
+footer {
+  background-color: #00BCD4;
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+}
+
+footer p {
+  color: #ffffff;
+  font-size: 16px;
+  margin: 20px 0px 20px 0px;
+  padding: 0px;
+}
