@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+    <% if current_user.urls.present? %>
+      <div class="card">
+        <div class="header">
+          <h2><%= t('h2.text1') %></h2>
+        </div>
+        <div class="body table-responsive">
+          <table class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+              <tr>
+                <th><%= t('th.text1') %></th>
+                <th><%= t('th.text2') %></th>
+                <th><%= t('th.text3') %></th>
+                <th><%= t('th.text4') %></th>
+                <th><%= t('th.text5') %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% current_user.urls.each do | url | %>
+                <tr>
+                  <td><%=  url.id %></td>
+                  <td><%=  url.path %></td>
+                  <td><%=  generate_short_url(url) %></td>
+                  <td><%= link_to(t('a.text6'), url_path(url), class: 'btn btn-xs btn-block bg-cyan waves-effect', method: :delete, data: {confirm: t('a.data1', url: url.path)}) %></td>
+                  <td>
+                    <%= link_to(generate_facebook_share_url(url)) do %>
+                      <%= image_tag(image_path('facebook_icon.png')) %>
+                    <% end %>
+                    <%= link_to(generate_twitter_share_url(url)) do %>
+                      <%= image_tag(image_path('twitter_icon.png')) %>
+                    <% end %>
+                    <%= link_to(generate_googleplus_share_url(url)) do %>
+                      <%= image_tag(image_path('googleplus_icon.png')) %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>  
+    <% else %>
+      <% content_for :alert do %>
+        <div class="alert alert-danger alert-dismissible align-center" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <%= t('div.text2') %> 
+        </div>
+      <% end %>  
+    <% end %>
+  </div>
+</div>
