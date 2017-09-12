@@ -20,4 +20,9 @@ class Url < ApplicationRecord
       self.code = SecureRandom.urlsafe_base64(length)
     end while Url.exists?(code: self.code)
   end
+
+  # specify a custom attribute for auto-generated urls
+  def to_param
+    code
+  end
 end
