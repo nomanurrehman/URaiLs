@@ -1,0 +1,7 @@
+<p><%= t('mail.unlock_account.p.text1', email: @resource.email) %></p>
+
+<p><%= t('mail.unlock_account.p.text2') %></p>
+
+<p><%= t('mail.unlock_account.p.text3') %></p>
+
+<p><%= link_to t('mail.unlock_account.a.text1'), unlock_url(@resource, unlock_token: @token, subdomain: (I18n.locale == :en ? nil : I18n.locale)) %></p>
