@@ -1,0 +1,71 @@
+<% content_for :alert do %>
+  <%= devise_error_messages! %>
+<% end %>  
+
+<div class="row">
+  <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3">
+    <div class="login-box">
+      <div class="logo">
+        <h3 class="align-center"><%= t('h3.text5') %></h3>    
+      </div>
+      <div class="card">
+        <div class="body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">person</i></span>
+              <div class="form-line">
+                <%= f.text_field :first_name, class: 'form-control', placeholder: t('input.placeholder5') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">group</i></span>
+              <div class="form-line">
+                <%= f.text_field :last_name, class: 'form-control', placeholder: t('input.placeholder6') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">person</i></span>
+              <div class="form-line">
+                <%= f.email_field :email, class: 'form-control', placeholder: t('input.placeholder2') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div class="col-cyan font-bold"><%= t('div.text3', email: resource.unconfirmed_email) %></div>
+              <% end %>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">cake</i></span>
+              <div class="form-line">
+                <%= f.text_field :date_of_birth, class: 'datepicker form-control', placeholder: t('input.placeholder7') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">lock</i></span>
+              <div class="form-line">
+                <%= f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: t('input.placeholder3') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">lock</i></span>
+              <div class="form-line">
+                <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', placeholder: t('input.placeholder4') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">lock</i></span>
+              <div class="form-line">
+                <%= f.password_field :current_password, autocomplete: :'off', class: :'form-control', placeholder: t('input.placeholder8') %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-7 col-sm-7 col-md-5 col-xs-offset-5 col-sm-offset-5 col-md-offset-7">
+                <%= f.submit t('input.value4'), class: 'btn btn-block bg-cyan waves-effect' %>
+              </div>
+            </div>
+          <% end %>        
+        </div>        
+      </div>
+    </div>
+  </div>   
+</div>
