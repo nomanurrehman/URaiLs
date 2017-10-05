@@ -13,4 +13,10 @@ class User < ApplicationRecord
   # associations
   has_many :ownerships
   has_many :urls, through: :ownerships
+
+  # override devise email sending
+  # to account for localization
+  def send_devise_notification(notification, *args)
+    I18n.with_locale(I18n.locale) { super(notification, *args) }
+  end
 end
