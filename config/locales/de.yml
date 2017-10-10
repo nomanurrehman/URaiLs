@@ -1,0 +1,112 @@
+de:
+  h1:
+    text1: "Für Leute, die das Internet lieben"
+  h2:
+    text1: "Ihre verkürzten Webadressen"
+  h3:
+    text1: "Aber hasse lange, lahme und langweilige Web-Adressen!"
+    text2: "Kontobestätigung anfordern"
+    text3: "Neues Passwort erstellen"
+    text4: "Passwort zurücksetzen"
+    text5: "Konto bearbeiten"
+    text6: "Benutzerkonto anlegen"
+    text7: "Anmelden"
+    text8: "Konto anfordern Unlock"
+  div:
+    text1: "Ihre verkürzte URL ist %{url}"
+    text2: "Sie haben noch keine URLs verkürzt!"
+    text3: "Momentan wartende Bestätigung für: %{email}"
+    text4: "Ihre verkürzte URL wurde erfolgreich gelöscht"
+    text5: "Die URL, die Sie suchen, wurde nicht verkürzt"
+  input:
+    placeholder1: "Geben Sie url ein und drücken Sie Enter"
+    placeholder2: "Email"
+    placeholder3: "Passwort (mindestens 8 Zeichen)"
+    placeholder4: "Bestätige das Passwort"
+    placeholder5: "Vorname"
+    placeholder6: "Familienname, Nachname"
+    placeholder7: "Geburtsdatum"
+    placeholder8: "Aktuelles Passwort"
+    placeholder9: "Passwort"
+    value1: "BESTÄTIGEN BESTÄTIGEN"
+    value2: "KENNWORT AKTUALISIEREN"
+    value3: "PASSWORT ZURÜCKSETZEN"
+    value4: "AKTUALISIEREN"
+    value5: "ANMELDEN"
+    value6: "ANMELDEN"
+    value7: "KONTO ENTSPERREN"
+  p:
+    text1: "%{symbol} Republik der Scorchers %{year}. Alle Rechte vorbehalten."
+  a:
+    text1: "MEINE URAILS"
+    text2: "KONTO BEARBEITEN"
+    text3: "AUSLOGGEN"
+    text4: "ANMELDUNG"
+    text5: "ANMELDEN"
+    text6: "Löschen"
+    text7: "Passwort vergessen?"
+    text8: "Konto unbestätigt?"
+    text9: "Konto gesperrt?"
+    text10: "Herzlich willkommen, %{full_name}"
+    data1: "Sind Sie sicher, dass Sie die url %{url} aus Ihrem Konto löschen möchten?"
+  th:
+    text1: "ICH WÜRDE"
+    text2: "Vollständige URL"
+    text3: "Kurz-URL"
+    text4: "Aktion"
+    text5: "Aktie"
+  label:
+    text1: "Erinnere dich an mich"
+  mail:
+    confirm_account:
+      p:
+        text1: "Herzlich willkommen %{email}!"
+        text2: "Sie können Ihre Konto-E-Mail über den untenstehenden Link bestätigen:"
+      a:
+        text1: "Bestätige mein Konto"
+    password_change:
+      p:
+        text1: "Hallo %{email}!"
+        text2: "Wir melden uns mit Ihnen in Verbindung, um Ihnen mitzuteilen, dass Ihr Passwort geändert wurde."
+    reset_password:
+      p:
+        text1: "Hallo %{email}!"
+        text2: "Jemand hat einen Link angefordert, um Ihr Passwort zu ändern. Sie können dies über den Link unten tun."
+        text3: "Wenn Sie dies nicht verlangen, ignorieren Sie bitte diese E-Mail."
+        text4: "Ihr Passwort wird sich nicht ändern, bis Sie auf den Link oben zugreifen und ein neues erstellen."
+      a:
+        text1: "Ändere mein Passwort"
+    unlock_account:
+      p:
+        text1: "Hallo %{email}!"
+        text2: "Ihr Konto wurde aufgrund einer übermäßigen Anzahl von erfolglosen Anmeldeversuchen gesperrt."
+        text3: "Klicken Sie auf den Link unten, um Ihr Konto zu entsperren:"
+      a:
+        text1: "Entsperren Sie mein Konto"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "Vorname darf nicht leer sein"
+              too_long: "Vorname darf nicht länger sein als %{count} figuren"
+            last_name:
+              blank: "Der Nachname darf nicht leer sein"
+              too_long: "Nachname darf nicht länger sein als %{count} figuren"
+            email:
+              blank: "Email kann nicht leer sein"
+            password:
+              blank: "Passwort kann nicht leer sein"
+            password_confirmation:
+              confirmation: "Passwort und bestätigtes Passwort stimmt nicht überein"
+            current_password:
+              blank: "Aktuelles Passwort kann nicht leer sein"
+              invalid: "Das aktuelle Passwort ist ungültig"
+            date_of_birth:
+              blank: "Geburtsdatum darf nicht leer sein"
+        url:
+          attributes:
+            path:
+              blank: "Webadresse kann nicht leer sein"
+              unreachable: "Webadresse ist ungültig oder Host ist nicht erreichbar"

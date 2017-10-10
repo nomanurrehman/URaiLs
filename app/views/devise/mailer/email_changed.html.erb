@@ -1,0 +1,7 @@
+<p><%= t('mail.email_change.p.text1', email: @email) %></p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p><%= t('mail.email_change.p.text2', email: @resource.unconfirmed_email) %></p>
+<% else %>
+  <p><%= t('mail.email_change.p.text3', email: @resource.email) %></p>
+<% end %>

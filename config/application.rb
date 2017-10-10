@@ -14,5 +14,16 @@ module UrlShortener
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+     # autoload validators
+    config.autoload_paths += %W(
+      #{config.root}/app/validators
+    )
+    config.eager_load_paths += %W(
+      #{config.root}/app/validators
+    )
+
+    # setup components folder for asset lookup
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end

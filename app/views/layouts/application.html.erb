@@ -3,12 +3,22 @@
   <head>
     <title>UrlShortener</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- ensures proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Styles -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="theme-cyan">
+    <%= render 'shared/navigation_bar' %>
+    <%= render 'shared/flash_message' %>
+    <%= yield(:alert) %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval': 'false' %>
   </body>
 </html>

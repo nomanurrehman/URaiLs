@@ -1,0 +1,11 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "authors": [
+    "Noman ur Rehman"
+  ],
+  "description": "A URL shortener application built with Ruby on Rails",
+  "dependencies": {
+    "adminbsb-materialdesign": "1.0.4"
+  }
+}

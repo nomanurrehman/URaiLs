@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3">
+    <div class="login-box">
+      <div class="logo">
+        <h3 class="align-center"><%= t('h3.text7') %></h3>    
+      </div>
+      <div class="card">
+        <div class="body">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">person</i></span>
+              <div class="form-line">
+                <%= f.email_field :email, class: 'form-control', placeholder: t('input.placeholder2') %>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="material-icons">lock</i></span>
+              <div class="form-line">
+                <%= f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: t('input.placeholder9') %>
+              </div>
+            </div>
+            <div class="row">
+              <% if devise_mapping.rememberable? %>
+                <div class="col-xs-8 p-t-5">
+                  <%= f.check_box :remember_me, class: 'filled-in chk-col-cyan'  %>
+                  <%= f.label :remember_me, t('label.text1') %>      
+                </div> 
+              <% end %>
+              <div class="col-xs-4">
+                <%= f.submit t('input.value6'), class: 'btn btn-block bg-cyan waves-effect' %>
+              </div>
+            </div>
+            <div class="row m-t-15 m-b--20">
+              <%= render 'devise/shared/links' %>
+            </div>
+          <% end %>        
+        </div>        
+      </div>
+    </div>
+  </div>   
+</div>

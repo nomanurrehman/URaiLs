@@ -1,0 +1,37 @@
+<% content_for :alert do %>
+  
+  <% if @url.present? && @url.errors.any? %>
+    <div class="alert alert-danger alert-dismissible align-center" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <% @url.errors.each do | key, message | %>
+        <%= message %><br />
+      <% end %>
+    </div>    
+  <% end %>   
+  
+  <% if @url.present? && @url.code.present? %>
+    <div class="alert alert-info alert-dismissible align-center" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <%= t('div.text1', url: generate_short_url(@url)) %>
+    </div>    
+  <% end %>
+
+<% end %>  
+
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1 class="align-center font-italic"><%= t('h1.text1') %></h1>
+    <h3 class="align-center font-italic"><%= t('h3.text1') %></h3>
+  </div>
+</div>
+<div class="row">    
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="form-group form-group-lg">
+      <%= form_for(:url, url: urls_path) do | f | %>
+        <div class="form-line">
+          <%= f.text_field :path, class: :'form-control', placeholder: t('input.placeholder1') %>
+        </div>
+      <% end %>
+    </div>
+  </div>  
+</div>
